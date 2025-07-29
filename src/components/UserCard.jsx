@@ -22,7 +22,7 @@ const UserCard = ({ user }) => {
   };
 
   return (
-    <div className="flex justify-center mt-10 mb-20 cursor-pointer">
+    <div className="flex justify-center mt-10 mb-30 cursor-pointer">
       <div className="card bg-base-200 w-90 shadow-sm">
         <figure>
           <img
