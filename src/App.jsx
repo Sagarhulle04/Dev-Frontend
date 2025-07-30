@@ -12,8 +12,6 @@ import Connection from "./components/Connection.jsx";
 import Request from "./components/Request.jsx";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <>
       <Provider store={appStore}>

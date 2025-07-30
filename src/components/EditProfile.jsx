@@ -103,17 +103,18 @@ const EditProfile = ({ user }) => {
             <label className="label font-semibold">Gender</label>
             <select
               className="select select-bordered w-full"
-              value={gender}
+              value={gender || ""}
               onChange={(e) => setGender(e.target.value)}
             >
               <option disabled value="">
                 Select Gender
               </option>
-              <option>Male</option>
-              <option>Female</option>
-              <option>Other</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+              <option value="Other">Other</option>
             </select>
           </div>
+
           <div>
             <label className="label font-semibold">About</label>
             <textarea

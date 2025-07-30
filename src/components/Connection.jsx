@@ -44,7 +44,7 @@ const Connection = () => {
   }
 
   return (
-    <div className="w-full md:w-6/12 m-auto mt-8 mb-20">
+    <div className="w-full md:w-6/12 m-auto mt-8 mb-30">
       <h1 className="text-center font-bold text-4xl mb-6">Connections</h1>
       <ul className="space-y-4 cursor-pointer">
         {connection.map((data) => (

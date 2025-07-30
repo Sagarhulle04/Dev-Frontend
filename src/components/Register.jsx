@@ -29,7 +29,7 @@ const Register = () => {
         }
       );
       if (res.status === 200) {
-        dispatch(addUser(res.data));
+        dispatch(addUser(res.data.data));
         return navigate("/profile");
       } else {
         setError(res?.response?.data || "Registration failed");
