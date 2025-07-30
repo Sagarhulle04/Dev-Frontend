@@ -24,6 +24,11 @@ const Login = () => {
           withCredentials: true,
         }
       );
+
+      if (!email || !password) {
+        setError("Email and Password Required");
+        return;
+      }
       dispatch(addUser(res.data));
       return navigate("/");
     } catch (error) {
