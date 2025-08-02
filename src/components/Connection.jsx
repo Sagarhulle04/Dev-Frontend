@@ -3,10 +3,12 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addConnection } from "../utils/connectionSlice";
 import { BASE_URL } from "../utils/constants.js";
+import { Link, useNavigate } from "react-router-dom";
 
 const Connection = () => {
   const dispatch = useDispatch();
   const connection = useSelector((store) => store.connection);
+  const navigate = useNavigate();
 
   const fetchConnection = async () => {
     try {
@@ -22,7 +24,15 @@ const Connection = () => {
 
   useEffect(() => {
     fetchConnection();
-  }, []); // ✅ prevent infinite calls
+  }, []);
+
+  // const handleChat = () => {
+  //   try {
+  //     return navigate("/chat/" + connection._id);
+  //   } catch (error) {
+  //     console.error(error);
+  //   }
+  // };
 
   if (!connection) {
     return (
@@ -44,7 +54,7 @@ const Connection = () => {
   }
 
   return (
-    <div className="w-full md:w-6/12 m-auto mt-8 mb-30">
+    <div className="w-full md:w-6/12 m-auto mt-8 mb-32">
       <h1 className="text-center font-bold text-4xl mb-6">Connections</h1>
       <ul className="space-y-4 cursor-pointer">
         {connection.map((data) => (
@@ -66,7 +76,7 @@ const Connection = () => {
                   {data.age + ", " + data.gender}
                 </div>
                 <div className="text-xs uppercase font-semibold opacity-60">
-                  {data.about}
+                  {data.about.split(" ").slice(0, 7).join(" ") + "..."}
                 </div>
                 <div className="text-xs uppercase font-semibold opacity-60">
                   {data.skills.join(", ")}
@@ -81,6 +91,7 @@ const Connection = () => {
                 strokeWidth={1.5}
                 stroke="currentColor"
                 className="w-6 h-6"
+                onClick={() => navigate("/chat/" + data._id)}
               >
                 <path
                   strokeLinecap="round"
