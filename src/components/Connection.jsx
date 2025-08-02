@@ -91,7 +91,6 @@ const Connection = () => {
                 strokeWidth={1.5}
                 stroke="currentColor"
                 className="w-6 h-6"
-                onClick={() => navigate("/chat/" + data._id)}
               >
                 <path
                   strokeLinecap="round"
