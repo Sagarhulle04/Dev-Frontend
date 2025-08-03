@@ -31,7 +31,7 @@ const VerifyEmail = () => {
         setTimeout(() => {
           setToast(false);
           navigate("/profile");
-        }, 1200);
+        }, 4000);
         return navigate("/profile");
       } else {
         console.error("Verification failed:", res.data);
