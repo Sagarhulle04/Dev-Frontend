@@ -10,6 +10,7 @@ import Feed from "./components/Feed.jsx";
 import EditProfile from "./components/EditProfile.jsx";
 import Connection from "./components/Connection.jsx";
 import Request from "./components/Request.jsx";
+import VerifyEmail from "./components/VerifyEmail.jsx";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
               <Route path="/" element={<Feed />} />
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
+              <Route path="/verifyEmail" element={<VerifyEmail />} />
               <Route path="/profile" element={<Profile />} />
               <Route path="/connections" element={<Connection />} />
               <Route path="/requests" element={<Request />} />

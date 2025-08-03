@@ -28,11 +28,9 @@ const Register = () => {
           withCredentials: true,
         }
       );
-      if (res.status === 200) {
+      if (res.status == 200) {
         dispatch(addUser(res.data.data));
-        return navigate("/profile");
-      } else {
-        setError(res?.response?.data || "Registration failed");
+        return navigate("/verifyEmail");
       }
     } catch (error) {
       setError(error?.response?.data);
