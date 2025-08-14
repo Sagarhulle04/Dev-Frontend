@@ -84,8 +84,12 @@ const Request = () => {
                   <div className="text-xs uppercase font-semibold opacity-60">
                     {data.fromUserId.age + ", " + data.fromUserId.gender}
                   </div>
-                  <div className="text-xs uppercase font-semibold opacity-60">
-                    {data.fromUserId.about}
+                  <div className="text-xs font-semibold opacity-60">
+                    {data.fromUserId.about
+                      ? data.fromUserId.about.length > 50
+                        ? data.fromUserId.about.slice(0, 50) + "..."
+                        : data.fromUserId.about
+                      : "No about info available"}
                   </div>
                   <div className="text-xs uppercase font-semibold opacity-60">
                     {data.fromUserId.skills.join(", ")}
