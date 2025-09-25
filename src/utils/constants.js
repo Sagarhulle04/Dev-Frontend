@@ -1,2 +1,2 @@
 export const BASE_URL =
-  https://dev-backend-01bt.onrender.com;
+  location.hostname === "localhost" ? "http://localhost:3000" : "/api";
